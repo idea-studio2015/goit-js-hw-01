@@ -2,28 +2,28 @@ let cost;
 let country = prompt(`Введите страну доставки:`);
 
 switch (country.toLowerCase()) {
-  case 'india':
+  case "индия":
     cost = 80;
     break;
 
- case 'china':
+  case "китай":
     cost = 100;
     break;
 
-  case 'jamayka':
+  case "ямайка":
     cost = 120;
     break;
 
-  case 'australia':
+  case "австралия":
     cost = 170;
     break;
 
-  case 'chili':
+  case "чили":
     cost = 250;
     break;
 
   default:
-    alert('В вашей стране доставка не доступна');
+    alert("В вашей стране доставка не доступна");
 }
 
 alert(`Доставка в ${country} будет стоить ${cost} кредитов`);
