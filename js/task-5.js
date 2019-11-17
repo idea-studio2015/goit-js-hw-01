@@ -22,9 +22,10 @@ switch (country) {
   case "чили":
     cost = 250;
     break;
-
-  default:
-    alert("В вашей стране доставка не доступна");
 }
 
-alert(`Доставка в ${countryCapitalized} будет стоить ${cost} кредитов`);
+if (cost === undefined) {
+  alert("В вашей стране доставка не доступна");
+} else {
+  alert(`Доставка в ${countryCapitalized} будет стоить ${cost} кредитов`);
+}

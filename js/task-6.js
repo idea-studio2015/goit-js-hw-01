@@ -1,5 +1,5 @@
 let input;
-let total = "0";
+let total = Number("0");
 
 while (true) {
   input = prompt("Введите число:");
@@ -9,7 +9,7 @@ while (true) {
       break;
     } else {
       input = Number(input);
-      total = Number(total + input);
+      total += input;
     }
   } else {
     alert(`Было введено не число, попробуйте еще раз`);
