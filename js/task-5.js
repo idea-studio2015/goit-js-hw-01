@@ -1,7 +1,8 @@
 let cost;
-let country = prompt(`Введите страну доставки:`);
+let country = prompt(`Введите страну доставки:`).toLowerCase();
+let countryCapitalized = country.charAt(0).toUpperCase() + country.slice(1);
 
-switch (country.toLowerCase()) {
+switch (country) {
   case "индия":
     cost = 80;
     break;
@@ -26,4 +27,4 @@ switch (country.toLowerCase()) {
     alert("В вашей стране доставка не доступна");
 }
 
-alert(`Доставка в ${country} будет стоить ${cost} кредитов`);
+alert(`Доставка в ${countryCapitalized} будет стоить ${cost} кредитов`);

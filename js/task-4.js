@@ -6,17 +6,16 @@ let totalPrice;
 let balance;
 
 if (question === null) {
-  let message = `Отменено пользователем!`;
-  alert(message);
+  message = "Отменено пользователем!";
 } else {
-  let totalPrice = question * pricePerDroid;
+  totalPrice = question * pricePerDroid;
 
   if (totalPrice > credits) {
-    alert("Недостаточно средств на счету!");
+    message = "Недостаточно средств на счету!";
   } else {
-    let balance = credits - totalPrice;
-    alert(
-      `Вы купили ${question} дроидов, на счету осталось ${balance} кредитов.`
-    );
+    balance = credits - totalPrice;
+    message = `Вы купили ${question} дроидов, на счету осталось ${balance} кредитов.`;
   }
 }
+
+alert(message);
