@@ -1,21 +1,31 @@
-const credits = 23580;
-const pricePerDroid = 3000;
-const question = prompt("Сколько дроидов вы хотите купить?");
-let message;
-let totalPrice;
-let balance;
+'use strict';
 
-if (question === null) {
-  message = "Отменено пользователем!";
-} else {
-  totalPrice = question * pricePerDroid;
+const formatString = function(string) {
+  const limitSymbol = 40;
+  const realLength = string.length;
 
-  if (totalPrice > credits) {
-    message = "Недостаточно средств на счету!";
-  } else {
-    balance = credits - totalPrice;
-    message = `Вы купили ${question} дроидов, на счету осталось ${balance} кредитов.`;
+  if (realLength < limitSymbol) {
+    return string;
   }
-}
 
-alert(message);
+  if (realLength > limitSymbol) {
+    const splicedLength = string.slice(40) + '...';
+    return splicedLength;
+  }
+};
+
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
+
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);
+// вернется форматированная строка

@@ -1,6 +1,11 @@
-const name = "Генератор защитного поля";
-let price = 1000;
-console.log(`Выбран ${name}, цена за штуку ${price} кредитов`);
+'use strict';
 
-price = 2000;
-console.log(`Выбран ${name}, цена за штуку ${price} кредитов`);
+const logItems = function(array) {
+  for (let i = 1; i < array.length + 1; i += 1) {
+    console.log(`${i} -`, array[i - 1]);
+  }
+};
+
+console.log(logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]));
+
+console.log(logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']));

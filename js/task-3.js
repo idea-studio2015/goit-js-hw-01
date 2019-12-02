@@ -1,13 +1,18 @@
-const ADMIN_PASSWORD = "jqueryismyjam";
-let message;
-const text = prompt("Введите ваш пароль:");
+'use stict';
 
-if (text === null) {
-  message = "Отменено пользователем!";
-} else if (text === ADMIN_PASSWORD) {
-  message = "Добро пожаловать!";
-} else {
-  message = "Доступ запрещен, неверный пароль!";
-}
+const findLongestWord = function(string) {
+  const words = string.split(' ');
+  let largestWord = words[0];
+  for (const word of words) {
+    if (word.length > largestWord.length) {
+      largestWord = word;
+    }
+  }
+  return largestWord;
+};
 
-alert(message);
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
+
+console.log(findLongestWord('Google do a roll')); // 'Google'
+
+console.log(findLongestWord('May the force be with you')); // 'force'

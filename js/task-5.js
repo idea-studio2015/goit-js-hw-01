@@ -1,31 +1,21 @@
-let cost;
-let country = prompt(`Введите страну доставки:`).toLowerCase();
-let countryCapitalized = country.charAt(0).toUpperCase() + country.slice(1);
+'use strict';
 
-switch (country) {
-  case "индия":
-    cost = 80;
-    break;
+const WORD1 = 'sale';
+const WORD2 = 'spam';
 
-  case "китай":
-    cost = 100;
-    break;
+const checkForSpam = function(str) {
+  let wordArr = str.toLowerCase();
+  if (wordArr.indexOf(WORD1) !== -1 || wordArr.indexOf(WORD2) !== -1) {
+    return true;
+  }
 
-  case "ямайка":
-    cost = 120;
-    break;
+  return false;
+};
 
-  case "австралия":
-    cost = 170;
-    break;
+console.log(checkForSpam('Latest technology news')); // false
 
-  case "чили":
-    cost = 250;
-    break;
-}
+console.log(checkForSpam('JavaScript weekly newsletter')); // false
 
-if (cost === undefined) {
-  alert("В вашей стране доставка не доступна");
-} else {
-  alert(`Доставка в ${countryCapitalized} будет стоить ${cost} кредитов`);
-}
+console.log(checkForSpam('Get best sale offers now!')); // true
+
+console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
